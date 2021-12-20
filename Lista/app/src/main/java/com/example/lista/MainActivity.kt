@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    lateinit var name : EditText
+    lateinit var name: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +18,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun connect(v: View) {
-        val intent = Intent(this,HomePage::class.java).apply {
-            putExtra("name", name.text.toString())
-        }
+        if (findViewById<EditText>(R.id.nameText).text.isEmpty()) {
+            Toast.makeText(this, "You forgot to enter your name", Toast.LENGTH_SHORT).show()
+        } else {
+            val intent = Intent(this, HomePage::class.java).apply {
+                putExtra("name", name.text.toString())
+            }
 
-        startActivity(intent)
+            startActivity(intent)
+        }
 
     }
 }

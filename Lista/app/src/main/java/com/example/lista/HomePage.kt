@@ -14,7 +14,7 @@ class HomePage : AppCompatActivity() {
         val message = intent.getStringExtra("name")
 
         // Capture the layout's TextView and set the string as its text
-        val textView = findViewById<TextView>(R.id.welcomeText2).apply {
+        val textView = findViewById<TextView>(R.id.nameText1).apply {
             text = message
         }
 
