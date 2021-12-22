@@ -1,5 +1,6 @@
 package com.example.lista
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,15 +19,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun connect(v: View) {
+
         if (findViewById<EditText>(R.id.nameText).text.isEmpty()) {
             Toast.makeText(this, "You forgot to enter your name", Toast.LENGTH_SHORT).show()
         } else {
-            val intent = Intent(this, HomePage::class.java).apply {
-                putExtra("name", name.text.toString())
-            }
+            val sharedPreferences = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
 
+            val editor = sharedPreferences.edit().apply {
+                putString("name", name.text.toString())
+            }.apply()
+
+            val intent = Intent(this, HomePage::class.java)
+//            .apply {
+//                putExtra("name", name.text.toString())
+//            }
             startActivity(intent)
         }
-
     }
 }

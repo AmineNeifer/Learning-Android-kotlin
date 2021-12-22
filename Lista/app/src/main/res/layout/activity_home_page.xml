@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
+        android:text="Name"
         android:textColor="@color/teal_200"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -36,16 +36,17 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:id="@+id/groceriesButton"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="groceriesConnect"
+            android:text="Groceries" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
@@ -61,7 +62,7 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
@@ -69,7 +70,7 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
