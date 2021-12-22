@@ -5,8 +5,6 @@ import java.io.*
 
 class FileHelper {
 
-    val FILENAME = "listinfo.dat"
-
     fun writeData(item : ArrayList<String>, context: Context, filename: String) {
         var fos : FileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE)
 

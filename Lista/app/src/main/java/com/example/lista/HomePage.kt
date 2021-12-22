@@ -11,7 +11,7 @@ import android.widget.Toast
 
 class HomePage : AppCompatActivity() {
 
-    lateinit var name: TextView
+    private lateinit var name: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,11 @@ class HomePage : AppCompatActivity() {
 //            .apply {
 //            putExtra("name", name.text.toString())
 //        }
+        startActivity(intent)
+    }
+
+    fun bucketListConnect(v: View) {
+        val intent = Intent(this, BucketListActivity::class.java)
         startActivity(intent)
     }
 }

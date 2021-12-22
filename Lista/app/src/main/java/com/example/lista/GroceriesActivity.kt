@@ -9,8 +9,8 @@ import androidx.appcompat.app.AlertDialog
 
 class GroceriesActivity : AppCompatActivity() {
 
-    var itemList = ArrayList<String>()
-    var fileHelper = FileHelper()
+    private var itemList = ArrayList<String>()
+    private var fileHelper = FileHelper()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,7 @@ class GroceriesActivity : AppCompatActivity() {
             arrayAdapter.notifyDataSetChanged()
         }
 
-        listView.setOnItemClickListener { adapterView, view, position, l ->
+        listView.setOnItemClickListener { _, _, position, _ ->
             var alert = AlertDialog.Builder(this)
             alert.setTitle("Delete")
             alert.setMessage("Do you want to delete this item from the list?")
